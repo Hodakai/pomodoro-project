@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef, useEffect } from 'react';
+import {useState, useRef, useEffect, useCallback} from 'react';
 import { Button } from "@/components/ui/button";
 import confetti from "canvas-confetti";
 import { HistoryPomodoro } from "../../app/page";
@@ -43,10 +43,22 @@ export default function Pomodoro({ history, callback }: PomodoroProps) {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const startAudioRef = useRef<HTMLAudioElement | null>(null);
 
+    const resetTimer = useCallback((forceReset?: boolean) => {
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+        }
+        setIsTimerRunning(false);
+        setIsChillTime(false);
+        setTimeRemaining(timerConfig.workTime);
+        if (forceReset) {
+            setStreak(0);
+        }
+    }, [timerConfig.workTime]);
+
     useEffect(() => {
         setTimeRemaining(timerConfig.workTime);
         resetTimer(false);
-    }, [timerConfig]);
+    }, [resetTimer, timerConfig]);
 
     useEffect(() => {
         if (isTimerRunning && timeRemaining > 0) {
@@ -73,7 +85,7 @@ export default function Pomodoro({ history, callback }: PomodoroProps) {
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
         };
-    }, [isTimerRunning, timeRemaining, isChillTime, timerConfig]);
+    }, [isTimerRunning, timeRemaining, isChillTime, timerConfig, callback, streak]);
 
     const startTimer = () => {
         if (!isTimerRunning) {
@@ -81,18 +93,6 @@ export default function Pomodoro({ history, callback }: PomodoroProps) {
             if (startAudioRef.current) {
                 startAudioRef.current.play();
             }
-        }
-    };
-
-    const resetTimer = (forceReset?: boolean) => {
-        if (timerRef.current) {
-            clearInterval(timerRef.current);
-        }
-        setIsTimerRunning(false);
-        setIsChillTime(false);
-        setTimeRemaining(timerConfig.workTime);
-        if (forceReset) {
-            setStreak(0);
         }
     };
 
