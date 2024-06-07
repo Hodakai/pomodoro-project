@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Popo-modoro
 
-## Getting Started
+## Description
 
-First, run the development server:
+Popo-modoro est une application de gestion du temps basée sur la technique Pomodoro. Cette application permet de structurer les sessions de travail et de pause en fonction de différentes configurations. En outre, l'application enregistre les sessions dans une base de données pour permettre le suivi de l'historique des sessions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Fonctionnalités
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-   **Modes de travail :**
+    -   **45 minutes travail, 15 minutes pause**
+    -   **15 minutes travail, 5 minutes pause**
+    -   **Mode développeur : 10 secondes travail, 5 secondes pause**
+-   **Historique des sessions :** Suivi des sessions de travail et de pause avec stockage dans une base de données.
+  
+## Historique des sessions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+L'application enregistre chaque session de travail et de pause dans une base de données. Vous pouvez consulter l'historique des sessions via l'interface utilisateur de l'application.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Prérequis
 
-## Learn More
+-   Node.js (v21.7.3 ou supérieur)
+-   npm (v10.5.0 ou supérieur)
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1.  Clonez le dépôt :
+    
+    `git clone https://github.com/votre-utilisateur/popo-modoro.git` 
+    `cd popo-modoro` 
+    
+2.  Installez les dépendances :
+    
+    
+    `npm install` 
+    
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Utilisation
 
-## Deploy on Vercel
+Pour lancer le projet, utilisez la commande suivante :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`npm run dev` 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Tests
+
+Pour exécuter les tests, utilisez la commande suivante :
+
+
+`npm test` 
+
+
+## Compétences acquises
+
+Au travers de ce projet, les compétences suivantes ont été développées :
+
+-   **Gestion de projet avec Notion :** Utilisation de Notion pour organiser et planifier les différentes étapes du développement.
+-   **Qualité de code avec ESLint :** Mise en place et utilisation d'ESLint pour maintenir un code propre et cohérent.
+-   **Sécurité et analyse de code avec CodeQL :** Utilisation de CodeQL pour l'analyse de sécurité du code.
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Veuillez suivre les étapes suivantes pour soumettre une contribution :
+
+1.  Fork le projet.
+2.  Créez une branche pour votre fonctionnalité (`git checkout -b feature-nom-de-la-fonctionnalité`).
+3.  Commitez vos modifications (`git commit -m 'Ajout de la fonctionnalité'`).
+4.  Poussez à la branche (`git push origin feature-nom-de-la-fonctionnalité`).
+5.  Ouvrez une Pull Request.
