@@ -26,6 +26,7 @@ L'application enregistre chaque session de travail et de pause dans une base de 
 1.  Clonez le dépôt :
     
     `git clone https://github.com/votre-utilisateur/popo-modoro.git` 
+puis
     `cd popo-modoro` 
     
 2.  Installez les dépendances :
