@@ -22,9 +22,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm test
+
   analyze:
-    needs:
-      - nodejs
     name: Build and analyze
     runs-on: ubuntu-latest
 
