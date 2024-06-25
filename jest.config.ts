@@ -20,7 +20,7 @@ const config: Config = {
     coverageReporters: ['json', 'lcov', 'text', 'clover'],
     reporters: [
         'default',
-        ['jest-sonar-reporter', {
+        ['jest-junit', {
             outputDirectory: 'coverage',
             outputName: 'test-report.xml',
         }],
